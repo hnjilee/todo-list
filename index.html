@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do List</title>
+    <script
+      src="https://kit.fontawesome.com/0ce04dd2fb.js"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </head>
+  <body>
+    <section class="todoList">
+      <header class="todoList__header">to-do list</header>
+      <ul class="todoList__list">
+        <li class="todoList__item">
+          <span class="item__category">health</span>
+          <span class="item__name">exercise</span>
+          <div class="item__btns">
+            <button class="item__check">
+              <i class="fa-regular fa-circle-check"></i>
+            </button>
+            <button class="item__delete">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
+          </div>
+        </li>
+      </ul>
+      <footer class="todoList__footer">
+        <div>
+          <select class="footer__select">
+            <option value="health">health</option>
+            <option value="study">study</option>
+            <option value="chores">chores</option></select
+          ><input type="text" class="footer__text-input" />
+        </div>
+        <button class="footer__add">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </footer>
+    </section>
+  </body>
+</html>
