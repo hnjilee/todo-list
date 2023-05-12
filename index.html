@@ -17,24 +17,12 @@
       crossorigin="anonymous"
       async
     ></script>
+    <script src="main.js" type="module"></script>
   </head>
   <body>
     <section class="todoList">
       <header class="todoList__header">to-do list</header>
-      <ul class="todoList__list">
-        <li class="todoList__item">
-          <span class="item-category item__category">health</span>
-          <span class="item-name item__name">exercise</span>
-          <div class="item__btns">
-            <button class="item__btn item__check">
-              <i class="fa-regular fa-circle-check"></i>
-            </button>
-            <button class="item__btn item__delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-        </li>
-      </ul>
+      <ul class="todoList__list"></ul>
       <footer class="todoList__footer">
         <select class="item-category footer__select">
           <option value="health">health</option>

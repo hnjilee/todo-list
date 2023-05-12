@@ -1,11 +1,10 @@
-let id = 0;
 export default class TodoList {
   constructor() {
     this.list = {};
   }
 
   add(item) {
-    this.list = { ...this.list, [id++]: { ...item } };
+    this.list = { ...this.list, [Date.now()]: { ...item } };
   }
 
   check(id) {
