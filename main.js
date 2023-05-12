@@ -18,6 +18,21 @@ window.addEventListener('keydown', e => {
   }
 });
 
+list.addEventListener('click', e => {
+  const target = e.target;
+  const item = target.closest('[data-id]');
+  if (item == null) {
+    return;
+  }
+  const id = item.dataset.id;
+
+  if (target.closest('.item__check')) {
+    onCheck(id, item);
+  } else if (target.closest('.item__delete')) {
+    onDelete(id, item);
+  }
+});
+
 function onAdd() {
   const category = select.value;
   const name = textInput.value;
@@ -41,8 +56,9 @@ function resetInput() {
   textInput.focus();
 }
 
-function createTodoItem({ name, category, done }) {
+function createTodoItem({ id, name, category, done }) {
   const item = document.createElement('li');
+  item.setAttribute('data-id', id);
   item.classList.add('todoList__item');
   item.innerHTML = `
         <span class="item-category item__category">${category}</span>
@@ -58,4 +74,15 @@ function createTodoItem({ name, category, done }) {
     `;
 
   return item;
+}
+
+function onCheck(id, item) {
+  todoList.check(id);
+  const name = item.querySelector('.item__name');
+  name.classList.toggle('item__name--checked');
+}
+
+function onDelete(id, item) {
+  todoList.delete(id);
+  item.remove();
 }

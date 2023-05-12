@@ -4,7 +4,7 @@ export default class TodoList {
   }
 
   add(item) {
-    this.list = { ...this.list, [Date.now()]: { ...item } };
+    this.list = { ...this.list, [item.id]: { ...item } };
   }
 
   check(id) {
@@ -19,7 +19,7 @@ export default class TodoList {
       checked = { ...this.list[id], done: true };
     }
 
-    this.list = { ...this.list, [id]: { ...checked } };
+    this.list = { ...this.list, [id]: checked };
   }
 
   delete(id) {

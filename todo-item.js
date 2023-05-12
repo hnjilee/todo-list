@@ -6,6 +6,7 @@ export const Category = Object.freeze({
 
 export class TodoItem {
   constructor(name, category) {
+    this.id = Date.now();
     this.name = name;
     this.category = category;
     this.done = false;

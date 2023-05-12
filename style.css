@@ -147,6 +147,10 @@ body {
   color: var(--color-black);
 }
 
+.item__name--checked {
+  text-decoration: line-through;
+}
+
 .item__btns {
   padding: var(--padding-block) 0.5em;
   background-color: var(--color-light-yellow);
