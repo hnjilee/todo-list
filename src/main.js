@@ -1,5 +1,5 @@
 import { TodoItem, Category } from './todo-item.js';
-import TodoList from './todo-list.js';
+import { TodoList } from './todo-list.js';
 
 const todoList = new TodoList();
 
@@ -7,6 +7,9 @@ const addBtn = document.querySelector('.footer__add');
 const select = document.querySelector('.footer__select');
 const textInput = document.querySelector('.footer__text-input');
 const list = document.querySelector('.todoList__list');
+
+const options = createOptions(Category);
+select.append(...options);
 
 addBtn.addEventListener('click', () => {
   onAdd();
@@ -32,6 +35,15 @@ list.addEventListener('click', e => {
     onDelete(id, item);
   }
 });
+
+function createOptions(categoryObj) {
+  return Object.values(categoryObj).map(category => {
+    const option = document.createElement('option');
+    option.setAttribute('value', category);
+    option.textContent = category;
+    return option;
+  });
+}
 
 function onAdd() {
   const category = select.value;

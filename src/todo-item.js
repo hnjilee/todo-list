@@ -2,6 +2,7 @@ export const Category = Object.freeze({
   health: 'health',
   study: 'study',
   chores: 'chores',
+  reading: 'reading',
 });
 
 export class TodoItem {
